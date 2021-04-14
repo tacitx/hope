@@ -20,4 +20,11 @@ class BubbleSortTest {
         BubbleSort.sort2(arr);
         System.out.println(Arrays.toString(arr));
     }
+
+    @Test
+    void test3() {
+        int[] arr = new int[]{2, 3, 5, 3, 4};
+        BubbleSort.sort3(arr);
+        System.out.println(Arrays.toString(arr));
+    }
 }

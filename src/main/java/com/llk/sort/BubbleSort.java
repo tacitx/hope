@@ -52,21 +52,27 @@ public class BubbleSort {
     /**
      * 第二次优化
      * 针对数组部分有序
-     * 主要思路为记录有序区的位置
+     * 主要思路为记录有序区的位置，并且在一轮次的排序中执行到有序区的边缘
      *
      * @param array
      */
     public static void sort3(int[] array) {
+        // 最后一次交换的位置
+        int lastExchangeIndex = 0;
+        // 无序数组的边界，只需比较到这里
+        int sortBorder = array.length - 1;
         for (int i = 0; i < array.length; i++) {
             boolean isSorted = true;
-            for (int j = 0; j < array.length - i - 1; j++) {
+            for (int j = 0; j < sortBorder; j++) {
                 if (array[j] < array[j + 1]) {
                     int temp = array[j];
                     array[j] = array[j + 1];
                     array[j + 1] = temp;
                     isSorted = false;
+                    lastExchangeIndex = j;
                 }
             }
+            sortBorder = lastExchangeIndex;
             if (isSorted) {
                 break;
             }
