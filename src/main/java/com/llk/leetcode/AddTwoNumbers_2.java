@@ -9,18 +9,30 @@ import com.llk.entity.ListNode;
 public class AddTwoNumbers_2 {
 
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        ListNode pointer = null;
         ListNode sumListNode = null;
         int carry = 0;
         while (l1 != null || l2 != null) {
             int n1 = l1 != null ? l1.val : 0;
             int n2 = l2 != null ? l2.val : 0;
-
             int sum = n1 + n2 + carry;
-            if (sum > 9) {
-                carry = 1;
+            carry = sum / 10;
+            if (sumListNode == null) {
+                pointer = sumListNode = new ListNode(sum % 10);
+            } else {
+                pointer.next = new ListNode(sum % 10);
+                pointer = pointer.next;
             }
-            sumListNode.val = sum % 10;
+            if (l1 != null) {
+                l1 = l1.next;
+            }
+            if (l2 != null) {
+                l2 = l2.next;
+            }
         }
-        return null;
+        if (carry != 0) {
+            pointer.next = new ListNode(carry);
+        }
+        return sumListNode;
     }
 }

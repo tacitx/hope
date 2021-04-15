@@ -3,6 +3,12 @@ package com.llk.leetcode;
 import com.llk.entity.ListNode;
 
 public class HasCycle_141 {
+    /**
+     * 快慢指针/追击问题
+     *
+     * @param head
+     * @return
+     */
     public boolean hasCycle(ListNode head) {
         ListNode l1 = head;
         ListNode l2 = head;
