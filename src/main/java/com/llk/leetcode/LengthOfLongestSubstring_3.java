@@ -12,7 +12,7 @@ import java.util.Set;
  * @author llK
  * @date 2021/4/15
  */
-public class LengthOfLongestSubstring_03 {
+public class LengthOfLongestSubstring_3 {
 
     public int lengthOfLongestSubstring_0(String s) {
         Set<Character> set = new HashSet<>();
