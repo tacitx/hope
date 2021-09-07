@@ -1,7 +1,6 @@
 package com.llk.leetcode;
 
 /**
-<<<<<<< HEAD
  * 移除k位数字
  * 贪心算法
  *
@@ -51,15 +50,7 @@ public class RemoveKdigits_402 {
             numNew = numNew.substring(1, numNew.length());
         }
         return numNew;
-=======
- * @author llK
- * @date 2021/5/1
- * 移掉K位数字
- */
-public class RemoveKdigits_402 {
 
-    public String removeKdigits(String num, int k) {
-        return null;
->>>>>>> origin/main
     }
+
 }
